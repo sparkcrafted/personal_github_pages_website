@@ -48,7 +48,7 @@ a:hover {
 
 .site-shell {
   display: grid;
-  grid-template-columns: 176px minmax(0, 1fr);
+  grid-template-columns: minmax(150px, 176px) minmax(0, 1fr);
   min-height: 100vh;
 }
 
@@ -103,6 +103,7 @@ a:hover {
   padding: 20px 36px 40px;
   max-width: 1280px;
   width: 100%;
+  min-width: 0;
 }
 
 .article-header {
@@ -305,31 +306,86 @@ li {
   margin: 2px 0;
 }
 
-/* Project entries */
+/* Wiki-style tables */
+
+.wikitable {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0 24px;
+  background: #f8f9fa;
+  border: 1px solid var(--border);
+  font-size: 0.92rem;
+}
+
+.wikitable th,
+.wikitable td {
+  border: 1px solid var(--light-border);
+  padding: 8px 10px;
+  vertical-align: top;
+}
+
+.wikitable th {
+  background: #eaecf0;
+  text-align: left;
+  font-weight: 700;
+}
+
+.wikitable td {
+  background: #ffffff;
+}
+
+.initiatives-table td:first-child {
+  width: 18%;
+}
+
+.initiatives-table td:nth-child(2),
+.initiatives-table td:nth-child(3),
+.initiatives-table td:nth-child(4) {
+  width: 27%;
+}
+
+/* Project and initiative entries */
 
 .project-list {
   display: block;
   margin-top: 8px;
 }
 
-.project-card {
+.project-card,
+.initiative-entry {
   border: none;
   border-bottom: 1px solid var(--lighter-border);
   background: transparent;
   padding: 10px 0;
 }
 
-.project-card:first-child {
+.project-card:first-child,
+.initiative-entry:first-child {
   border-top: 1px solid var(--lighter-border);
 }
 
-.project-card p {
+.project-card p,
+.initiative-entry p {
   margin-bottom: 6px;
 }
 
 .tagline {
   color: var(--muted);
   font-size: 0.875rem;
+}
+
+/* Citation-style lists */
+
+.citation-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.citation-list li {
+  margin-bottom: 10px;
+  padding-left: 24px;
+  text-indent: -24px;
 }
 
 /* Footer */
@@ -342,9 +398,46 @@ footer {
   font-size: 0.85rem;
 }
 
-/* Mobile */
+/* Medium screens: keep sidebar and content side-by-side */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  .site-shell {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+
+  .content {
+    padding: 18px 24px 36px;
+  }
+
+  .sidebar {
+    padding: 18px 10px 22px 14px;
+  }
+
+  .sidebar nav {
+    font-size: 0.82rem;
+  }
+
+  .infobox {
+    float: none;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 0 18px 0;
+  }
+
+  .main-card {
+    max-width: none;
+  }
+
+  .wikitable {
+    display: block;
+    overflow-x: auto;
+    white-space: normal;
+  }
+}
+
+/* Small screens */
+
+@media (max-width: 700px) {
   .site-shell {
     grid-template-columns: 1fr;
   }
@@ -354,23 +447,54 @@ footer {
     height: auto;
     border-right: none;
     border-bottom: 1px solid var(--lighter-border);
+    padding: 14px 18px;
+  }
+
+  .sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px 18px;
+  }
+
+  .sidebar h2 {
+    grid-column: span 2;
+    margin-top: 14px;
   }
 
   .content {
-    padding: 18px 18px 32px;
+    padding: 16px 18px 32px;
   }
 
-  .infobox {
-    float: none;
-    width: 100%;
-    margin: 0 0 18px;
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
   }
 
   .article-tabs {
     display: none;
   }
 
+  .infobox {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 18px;
+  }
+
   .main-card {
     max-width: none;
+  }
+
+  .contents-box {
+    width: 100%;
+  }
+
+  .wikitable {
+    display: block;
+    overflow-x: auto;
+    white-space: normal;
   }
 }
