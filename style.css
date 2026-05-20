@@ -1,0 +1,376 @@
+:root {
+  --bg: #ffffff;
+  --page: #ffffff;
+  --text: #202122;
+  --muted: #54595d;
+  --border: #a2a9b1;
+  --light-border: #c8ccd1;
+  --lighter-border: #eaecf0;
+  --link: #0645ad;
+  --visited: #0b0080;
+  --sidebar-bg: #f8f9fa;
+  --infobox-bg: #f8f9fa;
+  --infobox-header: #d8e8ff;
+  --infobox-section: #eaecf0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--visited);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Overall layout */
+
+.site-shell {
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--lighter-border);
+  padding: 22px 12px 24px 18px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
+
+.site-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+
+.site-title a {
+  color: var(--text);
+}
+
+.sidebar nav {
+  font-size: 0.875rem;
+}
+
+.sidebar h2 {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  border-bottom: 1px solid var(--lighter-border);
+  margin: 18px 0 6px;
+  padding-bottom: 3px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 2px 0;
+  line-height: 1.45;
+}
+
+/* Main article area */
+
+.content {
+  background: var(--page);
+  padding: 20px 36px 40px;
+  max-width: 1280px;
+  width: 100%;
+}
+
+.article-header {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+  padding-bottom: 6px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 2.25rem;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0 0 6px;
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: var(--text);
+  max-width: 850px;
+  margin: 0;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.55rem;
+  font-weight: normal;
+  border-bottom: 1px solid var(--border);
+  margin: 28px 0 10px;
+  padding-bottom: 2px;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 0 0 4px;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+ul {
+  margin-top: 6px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+/* Wiki article tabs */
+
+.article-tabs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--light-border);
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+}
+
+.article-tabs div {
+  display: flex;
+  gap: 2px;
+}
+
+.article-tabs a {
+  display: inline-block;
+  padding: 8px 10px 6px;
+  border: 1px solid transparent;
+  border-bottom: none;
+}
+
+.article-tabs a.active {
+  color: var(--text);
+  background: #ffffff;
+  border-color: var(--light-border);
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: -1px;
+}
+
+/* Intro section */
+
+.intro-grid {
+  display: block;
+}
+
+.main-card {
+  max-width: 850px;
+}
+
+/* Infobox */
+
+.infobox {
+  float: right;
+  clear: right;
+  width: 320px;
+  margin: 0 0 18px 28px;
+  border: 1px solid var(--border);
+  background: var(--infobox-bg);
+  padding: 3px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.infobox-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  background: var(--infobox-header);
+  border: 1px solid var(--border);
+  padding: 5px;
+  margin-bottom: 4px;
+}
+
+.infobox img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--light-border);
+  background: #ffffff;
+  margin-bottom: 4px;
+}
+
+.infobox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.infobox th,
+.infobox td {
+  border-top: 1px solid var(--lighter-border);
+  padding: 6px 6px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.infobox th {
+  width: 34%;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.infobox td {
+  color: var(--text);
+}
+
+.infobox-section {
+  text-align: center !important;
+  background: var(--infobox-section);
+  font-weight: 700;
+  border-top: 1px solid var(--border) !important;
+  border-bottom: 1px solid var(--border);
+  padding: 4px 6px !important;
+}
+
+.infobox a {
+  color: var(--link);
+}
+
+.infobox a:visited {
+  color: var(--visited);
+}
+
+/* Contents box */
+
+.contents-box {
+  border: 1px solid var(--border);
+  background: #f8f9fa;
+  display: inline-block;
+  min-width: 240px;
+  padding: 8px 14px;
+  margin: 8px 0 12px;
+  font-size: 0.9rem;
+}
+
+.contents-box h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  margin: 0 0 6px;
+  padding: 0;
+  text-align: center;
+}
+
+.contents-box ol {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.contents-box li {
+  margin: 2px 0;
+}
+
+/* Project entries */
+
+.project-list {
+  display: block;
+  margin-top: 8px;
+}
+
+.project-card {
+  border: none;
+  border-bottom: 1px solid var(--lighter-border);
+  background: transparent;
+  padding: 10px 0;
+}
+
+.project-card:first-child {
+  border-top: 1px solid var(--lighter-border);
+}
+
+.project-card p {
+  margin-bottom: 6px;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* Footer */
+
+footer {
+  border-top: 1px solid var(--lighter-border);
+  margin-top: 42px;
+  padding-top: 14px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+  .site-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--lighter-border);
+  }
+
+  .content {
+    padding: 18px 18px 32px;
+  }
+
+  .infobox {
+    float: none;
+    width: 100%;
+    margin: 0 0 18px;
+  }
+
+  .article-tabs {
+    display: none;
+  }
+
+  .main-card {
+    max-width: none;
+  }
+}
