@@ -8,7 +8,13 @@
 </head>
 
 <body>
-  <div class="site-shell">
+  <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Open navigation menu">
+    ☰ Menu
+  </button>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+<div class="site-shell">
 
     <aside class="sidebar">
       <div class="site-title">
@@ -189,16 +195,16 @@
 
           <tbody>
             <tr>
-              <td>2026–Present</td>
+              <td>Jun. 2026–Present</td>
               <td>American Society for Engineering Education</td>
               <td>Board Governance and Administration Director</td>
               <td>Board governance, administration, national association operations</td>
             </tr>
 
             <tr>
-              <td>2023–2026</td>
+              <td>2023–May 2026</td>
               <td>Spark Professional Services</td>
-              <td>Principal, Strategic Operations & Analytics</td>
+              <td>Founder & Principal, Strategic Operations & Analytics</td>
               <td>Independent consulting, executive systems, operations strategy, applied analytics</td>
             </tr>
 
@@ -246,7 +252,7 @@
         <article class="resume-entry">
           <h3>American Society for Engineering Education</h3>
           <p class="resume-meta">
-            <strong>Board Governance and Administration Director</strong> · 2026–Present · Washington, DC
+            <strong>Board Governance and Administration Director</strong> · Jun. 2026–Present · Washington, DC
           </p>
 
           <ul>
@@ -268,7 +274,7 @@
         <article class="resume-entry">
           <h3>Spark Professional Services</h3>
           <p class="resume-meta">
-            <strong>Principal, Strategic Operations & Analytics</strong> · 2023–2026 · Baltimore, Maryland
+            <strong>Founder & Principal, Strategic Operations & Analytics</strong> · 2023–May 2026 · Baltimore, Maryland
           </p>
 
           <ul>
@@ -539,5 +545,19 @@
     </main>
 
   </div>
+
+  <script>
+    const menuButton = document.getElementById("mobileMenuButton");
+    const sidebar = document.querySelector(".sidebar");
+    const overlay = document.getElementById("mobileOverlay");
+
+    function toggleMenu() {
+      sidebar.classList.toggle("sidebar-open");
+      overlay.classList.toggle("overlay-visible");
+    }
+
+    menuButton.addEventListener("click", toggleMenu);
+    overlay.addEventListener("click", toggleMenu);
+  </script>
 </body>
 </html>
